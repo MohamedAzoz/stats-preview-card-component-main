@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders:opsz@10..72&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders:opsz@10..72&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+
+:root{
+    --Very_dark_blue : hsl(233, 47%, 7%);/*(main background)*/  
+    --Dark_desaturated_blue: hsl(244, 38%, 16%);/* (card background)*/
+    --Soft_violet: hsl(277, 64%, 61%);/*(accent)*/
+    --White: hsl(0, 0%, 100%);/* (main heading, stats)*/
+    --Slightly_transparent_white_paragraph: hsla(0, 0%, 100%, 0.75);/*(main paragraph)*/
+    --Slightly_transparent_white_headings: hsla(0, 0%, 100%, 0.6);/* (stat headings)*/
+}
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vb;
+    background-color: var(--Very_dark_blue);
+}
+main{
+    width: 78%;
+    height: 446px;
+    display: flex;
+    background-color: var(--Dark_desaturated_blue);
+    border-radius: 15px;
+}
+#card_content{
+    width: 50%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: "Inter", sans-serif;
+    align-items: center;
+    & h1{
+        color: var(--White);
+        width: 70%;
+        font-size: 2.5rem;
+        position: relative;
+        top: 2.2rem;
+        & span{
+            color: var(--Soft_violet);
+        }
+    }
+    & p{
+        width: 70%;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        opacity: 0.6;
+        color: var(--Slightly_transparent_white_paragraph);
+    }
+    & #card_follower{
+        width: 100%;
+        display: flex;
+        position: relative;
+        bottom: 1.5rem;
+        justify-content: space-evenly;
+        & .div{
+            display: flex;
+            flex-direction: column;
+            & h2{
+                color: var(--White);
+            }
+            & p{
+                font-family: "Lexend Deca", sans-serif;
+                text-transform: uppercase;
+                color: var(--Slightly_transparent_white_headings);
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+            }
+        }
+        
+    }
+
+}
+#card_img{
+    width: 50%;
+    height: inherit;
+    background-color: var(--Soft_violet);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius:15px ;
+    & picture{
+        width: 100%;
+        height: inherit;
+    }
+    & img{
+        width: 100%;
+        height: inherit;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius:15px ;
+        mix-blend-mode: multiply;
+    }
+}
+
+@media (max-width:375px) {
+    body{
+        padding: 4rem 0;
+    }
+    main{
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+    }
+    #card_content{
+        width: 100%;
+        height: auto;
+        gap: 3.5rem;
+        order: 2;
+        & h1{
+            width: 90%;
+            font-size: 2rem;
+            text-align: center;
+        }
+        & p{
+            width: 90%;
+            text-align: center;
+            text-indent: 7px;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        & #card_follower{
+            align-items: center;
+            flex-direction: column;
+            gap: 1.5rem;
+            & .div{
+            gap: 0.1rem;
+            text-align: center;
+            }
+        }
+    
+    }
+    #card_img{
+        width: 100%;
+        height: 248px;
+        border-top-right-radius: 15px;
+        border-top-left-radius:15px ;
+        border-bottom-right-radius:0 ;
+        order: 1;
+        & img{
+            width: 100%;
+            height: inherit;
+            border-top-right-radius: 15px;
+            border-top-left-radius:15px ;
+            border-bottom-right-radius:0 ;
+        }
+    }
+    
+}
