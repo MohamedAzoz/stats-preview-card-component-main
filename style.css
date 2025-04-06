@@ -111,15 +111,18 @@ main{
     main{
         width: 90%;
         height: auto;
+        display: flex;
         flex-direction: column;
     }
     #card_content{
         width: 100%;
         height: auto;
-        gap: 3.5rem;
+        gap: 4rem;
         order: 2;
+        position: relative;
+        transform: translate(9%);
         & h1{
-            width: 90%;
+            width: 100%;
             font-size: 2rem;
             text-align: center;
         }
@@ -127,7 +130,6 @@ main{
             width: 90%;
             text-align: center;
             text-indent: 7px;
-            margin-bottom: 1rem;
             font-size: 1.1rem;
         }
         & #card_follower{
